@@ -1,7 +1,17 @@
+window.onload=function(){
+
+setTimeout(function(){
+
+document.getElementById("doors").classList.add("open");
+
+},1000);
+
+}
+
 function register(){
 
-var user=document.getElementById("newuser").value;
-var pass=document.getElementById("newpass").value;
+let user=document.getElementById("newuser").value;
+let pass=document.getElementById("newpass").value;
 
 localStorage.setItem("username",user);
 localStorage.setItem("password",pass);
@@ -14,11 +24,11 @@ window.location="index.html";
 
 function login(){
 
-var user=document.getElementById("username").value;
-var pass=document.getElementById("password").value;
+let user=document.getElementById("username").value;
+let pass=document.getElementById("password").value;
 
-var savedUser=localStorage.getItem("username");
-var savedPass=localStorage.getItem("password");
+let savedUser=localStorage.getItem("username");
+let savedPass=localStorage.getItem("password");
 
 if(user===savedUser && pass===savedPass){
 
@@ -27,7 +37,7 @@ window.location="dashboard.html";
 }
 else{
 
-alert("Wrong Username or Password");
+alert("Invalid Login");
 
 }
 
