@@ -1,43 +1,54 @@
 function registerUser(){
 
-var user=document.getElementById("newuser").value;
-var pass=document.getElementById("newpass").value;
+let user=document.getElementById("newuser").value;
+let pass=document.getElementById("newpass").value;
 
-if(user=="" || pass==""){
-
-alert("Please enter username and password");
-return;
-
-}
-
-localStorage.setItem("username",user);
+localStorage.setItem("username",use ki r);
 localStorage.setItem("password",pass);
 
 alert("Account Created Successfully");
 
-// redirect to login page
-window.location.href="index.html";
+window.location="index.html";
 
 }
-
-
 
 function login(){
 
-var user=document.getElementById("username").value;
-var pass=document.getElementById("password").value;
+let user=document.getElementById("username").value;
+let pass=document.getElementById("password").value;
 
-var savedUser=localStorage.getItem("username");
-var savedPass=localStorage.getItem("password");
+let savedUser=localStorage.getItem("username");
+let savedPass=localStorage.getItem("password");
 
 if(user===savedUser && pass===savedPass){
 
-window.location.href="dashboard.html";
-
-}else{
-
-alert("Invalid Username or Password");
+window.location="dashboard.html";
 
 }
+else{
+
+alert("Invalid Login");
+
+}
+
+}
+
+function predict(symptom){
+
+let disease="";
+
+if(symptom=="fever") disease="Viral Fever";
+if(symptom=="cough") disease="Common Cold";
+if(symptom=="headache") disease="Migraine";
+if(symptom=="vomiting") disease="Food Poisoning";
+if(symptom=="cold") disease="Flu";
+if(symptom=="fatigue") disease="Anemia";
+if(symptom=="rash") disease="Skin Allergy";
+if(symptom=="dizziness") disease="Low BP";
+if(symptom=="chest") disease="Heart Problem";
+if(symptom=="stomach") disease="Gastric Problem";
+
+document.getElementById("resultBox").innerHTML=
+"Possible Disease: "+disease;
 
 }
