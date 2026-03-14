@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 
 <title>Disease Prediction</title>
@@ -11,7 +12,7 @@ font-family:Arial;
 text-align:center;
 background:linear-gradient(45deg,#00c6ff,#0072ff);
 color:white;
-padding:30px;
+padding:40px;
 }
 
 button{
@@ -22,31 +23,61 @@ border-radius:5px;
 cursor:pointer;
 }
 
+#result{
+margin-top:30px;
+background:white;
+color:black;
+display:inline-block;
+padding:15px;
+border-radius:10px;
+font-size:20px;
+}
+
 </style>
 
 <script>
 
 function predict(symptom){
 
-var disease="";
+let disease="";
 
-if(symptom=="fever"){
-disease="Possible Disease: Viral Fever";
+switch(symptom){
+
+case "fever": disease="Viral Fever"; break;
+case "cough": disease="Common Cold"; break;
+case "headache": disease="Migraine"; break;
+case "stomach": disease="Food Poisoning"; break;
+case "cold": disease="Flu"; break;
+case "vomit": disease="Gastritis"; break;
+case "fatigue": disease="Anemia"; break;
+case "throat": disease="Throat Infection"; break;
+case "chest": disease="Heart Problem"; break;
+case "dizzy": disease="Low Blood Pressure"; break;
+case "diarrhea": disease="Food Infection"; break;
+case "back": disease="Back Muscle Pain"; break;
+case "joint": disease="Arthritis"; break;
+case "tooth": disease="Dental Infection"; break;
+case "ear": disease="Ear Infection"; break;
+case "rash": disease="Skin Allergy"; break;
+case "itch": disease="Skin Irritation"; break;
+case "weight": disease="Diabetes"; break;
+case "vision": disease="Eye Problem"; break;
+case "breath": disease="Asthma"; break;
+case "sweat": disease="Fever Infection"; break;
+case "nausea": disease="Stomach Infection"; break;
+case "leg": disease="Leg Muscle Pain"; break;
+case "neck": disease="Cervical Pain"; break;
+case "anxiety": disease="Stress Disorder"; break;
+case "depression": disease="Mental Health Issue"; break;
+case "sleep": disease="Insomnia"; break;
+case "hair": disease="Vitamin Deficiency"; break;
+case "skin": disease="Dry Skin"; break;
+case "weak": disease="General Weakness"; break;
+
 }
 
-else if(symptom=="cough"){
-disease="Possible Disease: Cold";
-}
-
-else if(symptom=="headache"){
-disease="Possible Disease: Migraine";
-}
-
-else if(symptom=="stomach"){
-disease="Possible Disease: Food Poisoning";
-}
-
-document.getElementById("result").innerHTML=disease;
+document.getElementById("result").innerHTML=
+"Possible Disease: "+disease;
 
 }
 
@@ -56,12 +87,40 @@ document.getElementById("result").innerHTML=disease;
 
 <body>
 
-<h1>Select Symptom</h1>
+<h1>Select Symptoms</h1>
 
 <button onclick="predict('fever')">Fever</button>
 <button onclick="predict('cough')">Cough</button>
 <button onclick="predict('headache')">Headache</button>
 <button onclick="predict('stomach')">Stomach Pain</button>
+<button onclick="predict('cold')">Cold</button>
+<button onclick="predict('vomit')">Vomiting</button>
+<button onclick="predict('fatigue')">Fatigue</button>
+<button onclick="predict('throat')">Sore Throat</button>
+<button onclick="predict('chest')">Chest Pain</button>
+<button onclick="predict('dizzy')">Dizziness</button>
+
+<button onclick="predict('diarrhea')">Diarrhea</button>
+<button onclick="predict('back')">Back Pain</button>
+<button onclick="predict('joint')">Joint Pain</button>
+<button onclick="predict('tooth')">Tooth Ache</button>
+<button onclick="predict('ear')">Ear Pain</button>
+<button onclick="predict('rash')">Skin Rash</button>
+<button onclick="predict('itch')">Itching</button>
+<button onclick="predict('weight')">Weight Loss</button>
+<button onclick="predict('vision')">Blur Vision</button>
+<button onclick="predict('breath')">Short Breath</button>
+
+<button onclick="predict('sweat')">Sweating</button>
+<button onclick="predict('nausea')">Nausea</button>
+<button onclick="predict('leg')">Leg Pain</button>
+<button onclick="predict('neck')">Neck Pain</button>
+<button onclick="predict('anxiety')">Anxiety</button>
+<button onclick="predict('depression')">Depression</button>
+<button onclick="predict('sleep')">Sleep Problem</button>
+<button onclick="predict('hair')">Hair Fall</button>
+<button onclick="predict('skin')">Dry Skin</button>
+<button onclick="predict('weak')">Weakness</button>
 
 <h2 id="result"></h2>
 
