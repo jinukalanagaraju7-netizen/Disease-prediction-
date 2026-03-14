@@ -1,43 +1,42 @@
-window.onload=function(){
+function registerUser(){
 
-setTimeout(function(){
+var user=document.getElementById("newuser").value;
+var pass=document.getElementById("newpass").value;
 
-document.getElementById("doors").classList.add("open");
+if(user=="" || pass==""){
 
-},1000);
+alert("Please enter username and password");
+return;
 
 }
-
-function register(){
-
-let user=document.getElementById("newuser").value;
-let pass=document.getElementById("newpass").value;
 
 localStorage.setItem("username",user);
 localStorage.setItem("password",pass);
 
-alert("Account Created");
+alert("Account Created Successfully");
 
-window.location="index.html";
+// redirect to login page
+window.location.href="index.html";
 
 }
+
+
 
 function login(){
 
-let user=document.getElementById("username").value;
-let pass=document.getElementById("password").value;
+var user=document.getElementById("username").value;
+var pass=document.getElementById("password").value;
 
-let savedUser=localStorage.getItem("username");
-let savedPass=localStorage.getItem("password");
+var savedUser=localStorage.getItem("username");
+var savedPass=localStorage.getItem("password");
 
 if(user===savedUser && pass===savedPass){
 
-window.location="dashboard.html";
+window.location.href="dashboard.html";
 
-}
-else{
+}else{
 
-alert("Invalid Login");
+alert("Invalid Username or Password");
 
 }
 
